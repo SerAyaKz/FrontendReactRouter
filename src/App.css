@@ -1,38 +1,65 @@
-.App {
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #4a4a4a;
+  border: none;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+
+th,
+td {
   text-align: center;
+  padding: 12px;
+  vertical-align: middle;
+  border-top: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+th:first-child,
+td:first-child {
+  border-left: 1px solid #e6e6e6;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+th {
+  background-color: #38435a;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+tr:nth-child(even) {
+  background-color: #f8f8f8;
 }
 
-.App-link {
-  color: #61dafb;
+/* Style for the table heading */
+thead th {
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Style for the table body */
+tbody td {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+/* Style for the Pass/Fail column */
+td:last-child {
+  font-weight: 600;
+  background-color: #f8f8f8;
+}
+
+td:last-child[data-result="Pass"] {
+  color: #00bfa5;
+}
+
+td:last-child[data-result="Fail"] {
+  color: #ff1744;
 }
