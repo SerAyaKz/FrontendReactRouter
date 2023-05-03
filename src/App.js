@@ -1,13 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import {  BrowserRouter,  Routes,   Route,Link} from "react-router-dom";
 import axios from 'axios';
+import CountdownTimer from './component/CountdownTimer';
+
+const eventDate = new Date('2023-05-04T11:28:00'); // Change this to your event date
 
 const Home = () => (
   <div>
     <h2>Welcome to the Home Page</h2>
   </div>
+  
 );
-
+const Count = () => (
+  <div>
+  <h1>Event Countdown</h1>
+  <CountdownTimer eventDate={eventDate} format="DD:MM:YY" />
+  <CountdownTimer eventDate={eventDate} format="DD:Min:Sec" />
+</div>
+  
+);
 const WeekDays = () => {
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   const [currentDay, setCurrentDay] = useState(days[0]);
@@ -68,6 +79,8 @@ const App = () => (
           <li><Link to="/weekdays">Week Days</Link></li>
           <li><Link to="/months">Months</Link></li>
           <li><Link to="/apidata">API Data</Link></li>
+          <li><Link to="/count">Count</Link></li>
+
         </ul>
       </nav>
       <Routes>
@@ -75,6 +88,7 @@ const App = () => (
       <Route path="/weekdays" element={<WeekDays />}></Route>
       <Route path="/months" element={<Months />}></Route>
       <Route path="/apidata" element={<ApiData />}></Route>
+      <Route path="/count" element={<Count />}></Route>
 
        
   </Routes>
