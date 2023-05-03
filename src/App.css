@@ -63,3 +63,8 @@ td:last-child[data-result="Pass"] {
 td:last-child[data-result="Fail"] {
   color: #ff1744;
 }
+div .progress-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
