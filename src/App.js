@@ -115,7 +115,7 @@ function Cube(props) {
       onClick={(event) => setActive(!active)}
       scale={scale}
     >
-      <boxGeometry args={[2, 2, 2]} />
+      <boxGeometry args={[5, 5, 2]} />
       <meshStandardMaterial color={hovered ? "hotpink" : "orange"} />
     </animated.mesh>
   );
